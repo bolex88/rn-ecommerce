@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import StarRating from '../component/StarRating';
+import StarRating from 'react-native-star-rating';
 
 class GeneralStarExample extends Component {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
-import StarRating from '../component/StarRating'
+import StarRating from '../component/StarRating';
 
 const DetailScreen = ({ navigation }) => {
     return (
@@ -36,8 +36,12 @@ const DetailScreen = ({ navigation }) => {
             <View>
                 <Text style={styles.Texthead}>Blue Swear Jacket</Text>
                 <Text style={styles.TextReview}>Review: <FontAwesome name="star" size={18} color="gold" />
-                <StarRating 
-                selectedStar={(rating) => this.onStarRatingPress(rating)}/>
+                {/* <StarRating
+                    disabled={false}
+                    maxStars={5}
+                    rating={this.state.starCount}
+                    selectedStar={(rating) => this.onStarRatingPress(rating)}
+                /> */}
                 </Text>
             </View>
             <View style={styles.DotOne} /> 
@@ -72,6 +76,8 @@ const DetailScreen = ({ navigation }) => {
 
     );
 };
+
+
 
 const styles = StyleSheet.create({
     VictorStyle: {
