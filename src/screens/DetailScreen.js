@@ -35,14 +35,10 @@ const DetailScreen = ({ navigation }) => {
          
             <View>
                 <Text style={styles.Texthead}>Blue Swear Jacket</Text>
-                <Text style={styles.TextReview}>Review: <FontAwesome name="star" size={18} color="gold" />
-                {/* <StarRating
-                    disabled={false}
-                    maxStars={5}
-                    rating={this.state.starCount}
-                    selectedStar={(rating) => this.onStarRatingPress(rating)}
-                /> */}
-                </Text>
+                <View style={styles.Groupstyle}>
+                <Text style={styles.TextReview}>Review:</Text> 
+                <StarRating />
+                </View>
             </View>
             <View style={styles.DotOne} /> 
 
@@ -135,6 +131,10 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 20,
         marginBottom: 15
+    },
+    Groupstyle: {
+        flexDirection: 'row',
+        marginTop: 5
     },
     DotOne: {
         width: 50, 
@@ -249,7 +249,11 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     SumText: {
-        color: 'white'
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginLeft: 8,
+
     },
     CartText: {
         color: 'white'
