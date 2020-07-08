@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
+import StarRating from '../component/StarRating'
 
 const SearchScreen = ({ navigation }) => {
     return (
@@ -39,7 +40,7 @@ const SearchScreen = ({ navigation }) => {
                 />
               <View style={styles.Imagetext}>
                 <Text style={styles.Texthead}>Black Swear Jacket</Text>
-                <FontAwesome name="star" size={20} color="gold" />
+                <StarRating />
                 <Text style={styles.Price}>$90</Text>
               </View>
             </View>
@@ -49,7 +50,7 @@ const SearchScreen = ({ navigation }) => {
                 />
               <View style={styles.Imagetext}>
                 <Text style={styles.Texthead}>Blue Black Jacket</Text>
-                <FontAwesome name="star" size={20} color="gold" />
+                <StarRating />
                 <Text style={styles.Price}>$110</Text>
               </View>
             </View>
@@ -59,7 +60,7 @@ const SearchScreen = ({ navigation }) => {
                 />
               <View style={styles.Imagetext}>
                 <Text style={styles.Texthead}>Blue Swear Jacket</Text>
-                <FontAwesome name="star" size={20} color="gold" />
+                <StarRating />
                 <Text style={styles.Price}>$75</Text>
               </View>
             </View>
@@ -69,7 +70,7 @@ const SearchScreen = ({ navigation }) => {
                 />
               <View style={styles.Imagetext}>
                 <Text style={styles.Texthead}>Red Track Jacket</Text>
-                <FontAwesome name="star" size={20} color="gold" />
+                <StarRating />
                 <Text style={styles.Price}>$100</Text>
               </View>
             </View>
