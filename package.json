@@ -23,7 +23,8 @@
     "react-native-star-rating": "^1.1.0",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.3.9",
-    "react-navigation-stack": "^2.5.1"
+    "react-navigation-stack": "^2.5.1",
+    "react-star-rating-component": "^1.4.1"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",
