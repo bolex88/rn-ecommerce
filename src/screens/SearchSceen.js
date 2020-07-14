@@ -1,9 +1,16 @@
 import React from 'react'
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } from 'react-native'
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
 import StarRating from '../component/StarRating'
 
 const SearchScreen = ({ navigation }) => {
+    const Jackets = [
+        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', rating: 'StarRating', price: '$90'},
+        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', rating: 'StarRating', price: '$110'},
+        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', rating: 'StarRating', price: '$75'},
+        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', rating: 'StarRating', price: '$100'},
+        
+    ];
     return (
         <View style={styles.Container}>
             <View style={styles.VictorStyle}>
@@ -34,48 +41,26 @@ const SearchScreen = ({ navigation }) => {
                 </View>
             </View>
 
-            <View style={styles.Groupstyle}>
-                <Image style={styles.imagestyle}
-                source={require('../../assets/img/BlackGreen.png')}
-                />
-              <View style={styles.Imagetext}>
-                <Text style={styles.Texthead}>Black Swear Jacket</Text>
-                <StarRating />
-                <Text style={styles.Price}>$90</Text>
-              </View>
-            </View>
-            <View style={styles.Groupstyle}>
-                <Image style={styles.imagestyle}
-                source={require('../../assets/img/BlueBlack.png')}
-                />
-              <View style={styles.Imagetext}>
-                <Text style={styles.Texthead}>Blue Black Jacket</Text>
-                <StarRating />
-                <Text style={styles.Price}>$110</Text>
-              </View>
-            </View>
-            <View style={styles.Groupstyle}>
-                <Image style={styles.imagestyle}
-                source={require('../../assets/img/BlueJacket.png')}
-                />
-              <View style={styles.Imagetext}>
-                <Text style={styles.Texthead}>Blue Swear Jacket</Text>
-                <StarRating />
-                <Text style={styles.Price}>$75</Text>
-              </View>
-            </View>
-            <View style={styles.Groupstyle}>
-                <Image style={styles.imagestyle}
-                source={require('../../assets/img/RedJacket.png')}
-                />
-              <View style={styles.Imagetext}>
-                <Text style={styles.Texthead}>Red Track Jacket</Text>
-                <StarRating />
-                <Text style={styles.Price}>$100</Text>
-              </View>
-            </View>
-                
-           
+            <FlatList 
+                keyExtractor={(jacket) =>jacket.image}
+                data={Jackets}
+                renderItem={({ item }) => {
+                    return (
+                        <View style={styles.Groupstyle}>
+                        <Image style={styles.imagestyle}
+                            source={item.image}
+                        />
+                        <View style={styles.Imagetext}>
+                        <Text style={styles.Texthead}>
+                            {item.name}
+                        </Text>
+                        <StarRating />
+                        <Text style={styles.Price}>{item.price}</Text>
+                        </View>
+                        </View>
+                    );
+                }}
+            />   
         </View>
     )
 };
@@ -84,19 +69,6 @@ const styles = StyleSheet.create({
     Container: {
         backgroundColor: 'transparent'
     },
-    // Imput: {
-    //     fontSize: 18,
-    //     borderWidth: 2,
-    //     borderColor: 'white',
-    //     borderRadius: 10,
-    //     padding: 10,
-    //     margin: 5,
-    //     marginBottom: 15,
-    //     marginTop: 20,
-    //     backgroundColor: 'white',
-    //     marginLeft: 15,
-    //     marginRight: 15
-    // },
     Headertext: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -110,17 +82,17 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     Shopping: {
-        borderRadius: 30,
+        borderRadius: 60,
         borderColor: 'white',
-        borderWidth: 4,
+        borderWidth: 2,
         backgroundColor: 'white',
         padding: 15,
         marginRight: 15
     },
     LeftArrow: {
-        borderRadius: 30,
+        borderRadius: 60,
         borderColor: 'white',
-        borderWidth: 4,
+        borderWidth: 2,
         backgroundColor: 'white',
         padding: 15,
         marginLeft: 15
