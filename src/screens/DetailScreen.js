@@ -1,16 +1,19 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native'
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
 import StarRating from '../component/StarRating';
 
-const DetailScreen = ({ navigation }) => {
+function DetailScreen({ navigation }) {
+    const itemImage = navigation.getParam('itemImage');
+    const itemName = navigation.getParam('itemName');
+    const itemPrice = navigation.getParam('itemPrice');
     return (
         <View>
             <View >
                 <View style={styles.VictorStyle}>
                 <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                     <AntDesign name="arrowleft" 
-                        size={25} color="black" 
+                        size={25} color="black"                                                                                                                                                                                                                                                       
                         style={styles.LeftArrow}
                     />
                 </TouchableOpacity>
@@ -19,24 +22,23 @@ const DetailScreen = ({ navigation }) => {
                         style={styles.Shopping}
                     />
                 </View>
-                
+              
                 <View style={styles.StyleIcon}>
                     <Image style={styles.imagestyle}
-                    source={require('../../assets/img/BlueJacket.png')}
+                       source={(navigation.getParam('itemImage', 0))}
                     />
                     <Feather name="heart" 
                         size={24} color="royalblue" 
                         style={styles.Heart}
                     />
                 </View>
-       
+            
             </View>
             
-         
             <View>
-                <Text style={styles.Texthead}>Blue Swear Jacket</Text>
+                <Text style={styles.Texthead}>{(navigation.getParam('itemName', 'name'))}</Text>
                 <View style={styles.Groupstyle}>
-                <Text style={styles.TextReview}>Review:</Text> 
+                <Text style={styles.TextReview}>Review: </Text> 
                 <StarRating />
                 </View>
             </View>
@@ -60,7 +62,7 @@ const DetailScreen = ({ navigation }) => {
             <View style={styles.TotalAdd}>
                 <View style={styles.Amount}>
                 <Text style={styles.TotalText}>Total Amount </Text>
-                <Text style={styles.SumText}>$110</Text>
+                <Text style={styles.SumText}>{(navigation.getParam('itemPrice', 'price'))}</Text>
                 </View>
                 <View style={styles.AddCart}>
                   <TouchableOpacity onPress={() => navigation.navigate('')}>
