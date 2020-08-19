@@ -6,10 +6,10 @@ import StarRating from '../component/StarRating';
 
 function SearchScreen({ navigation }) {
     const Jackets = [
-        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', price: '$90'},
-        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', price: '$110'},
-        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', price: '$75'},
-        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', price: '$100'},
+        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', rating: 'StarRating', price: '$90'},
+        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', rating: 'StarRating', price: '$110'},
+        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', rating: 'StarRating', price: '$75'},
+        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', rating: 'StarRating', price: '$100'},
         
     ];
     return (
