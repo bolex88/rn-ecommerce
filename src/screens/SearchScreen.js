@@ -3,12 +3,13 @@ import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } 
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
 import StarRating from '../component/StarRating';
 
+
 function SearchScreen({ navigation }) {
     const Jackets = [
-        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', rating: 'StarRating', price: '$90'},
-        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', rating: 'StarRating', price: '$110'},
-        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', rating: 'StarRating', price: '$75'},
-        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', rating: 'StarRating', price: '$100'},
+        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', price: '$90'},
+        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', price: '$110'},
+        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', price: '$75'},
+        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', price: '$100'},
         
     ];
     return (
@@ -35,7 +36,7 @@ function SearchScreen({ navigation }) {
                 <TextInput style={styles.InputText} placeholder='Search Jacket'></TextInput>
                 </View>
                 <View style={styles.FilterView}>
-                  <TouchableOpacity onPress={() => navigation.navigate('')}>
+                  <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
                     <Text style={styles.FilterText}>Filter</Text>
                   </TouchableOpacity>
                 </View>
@@ -51,7 +52,9 @@ function SearchScreen({ navigation }) {
                             onPress={() => navigation.navigate('Detail', {
                                 itemImage: item.image,
                                 itemName: item.name,
-                                itemPrice: item.price})}>
+                                itemPrice: item.price,
+                                
+                                })}>
                             <Image style={styles.imagestyle}
                                 source={item.image}
                             />
