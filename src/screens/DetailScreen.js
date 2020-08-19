@@ -3,10 +3,12 @@ import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react
 import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
 import StarRating from '../component/StarRating';
 
+
 function DetailScreen({ navigation }) {
     const itemImage = navigation.getParam('itemImage');
     const itemName = navigation.getParam('itemName');
     const itemPrice = navigation.getParam('itemPrice');
+    // const itemRating = navigation.getParam('itemRating');
     return (
         <View>
             <View >
@@ -38,7 +40,7 @@ function DetailScreen({ navigation }) {
             <View>
                 <Text style={styles.Texthead}>{(navigation.getParam('itemName', 'name'))}</Text>
                 <View style={styles.Groupstyle}>
-                <Text style={styles.TextReview}>Review: </Text> 
+                <Text style={styles.TextReview}>Review : </Text> 
                 <StarRating />
                 </View>
             </View>
