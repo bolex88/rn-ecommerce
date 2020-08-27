@@ -20,6 +20,7 @@
     "react-native-reanimated": "~1.7.0",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
+    "react-native-simple-rating": "^1.0.0",
     "react-native-star-rating": "^1.1.0",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.3.9",
@@ -27,8 +28,9 @@
     "react-star-rating-component": "^1.4.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "@babel/core": "^7.8.6",
+    "@types/lodash.times": "^4.3.6",
+    "babel-preset-expo": "~8.1.0"
   },
   "private": true
 }
