@@ -3,27 +3,26 @@ import { StyleSheet } from 'react-native'
 import StarRating from 'react-native-star-rating'
 
 
-class GeneralStarExample extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      starCount: 2.5
-    };
-  }
+class MyStarRating extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     starCount: 2.5
+  //   };
+  // }
 
-  onStarRatingPress(rating) {
-    this.setState({
-      starCount: rating
-    });
-  }
+  // onStarRatingPress(rating) {
+  //   this.setState({
+  //     starCount: rating
+  //   });
+  // }
 
   render() {
     return (
       <StarRating 
-        disabled={false}
+        disabled={true}
         maxStars={5}
-        rating={this.state.starCount}
-        selectedStar={(rating) => this.onStarRatingPress(rating)}
+        rating={this.props.starCount}
         starSize={24}
         fullStarColor={'gold'}
       />
@@ -31,12 +30,10 @@ class GeneralStarExample extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
   Rating: {
 
   }
 })
 
-
-export default GeneralStarExample
+export default MyStarRating
