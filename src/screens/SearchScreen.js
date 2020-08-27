@@ -6,12 +6,13 @@ import StarRating from '../component/StarRating';
 
 function SearchScreen({ navigation }) {
     const Jackets = [
-        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', rating: 'StarRating', price: '$90'},
-        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', rating: 'StarRating', price: '$110'},
-        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', rating: 'StarRating', price: '$75'},
-        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', rating: 'StarRating', price: '$100'},
+        {image: require('../../assets/img/BlackGreen.png'), name: 'Black Swear Jacket', rating: 3, price: '$90'},
+        {image: require('../../assets/img/BlueBlack.png'), name: 'Blue Black Jacket', rating: 5, price: '$110'},
+        {image: require('../../assets/img/BlueJacket.png'), name: 'Blue Swear Jacket', rating: 4, price: '$75'},
+        {image: require('../../assets/img/RedJacket.png'), name: 'Red Track Jacket', rating: 2.5, price: '$100'},
         
     ];
+
     return (
         <View style={styles.Container}>
             <View style={styles.VictorStyle}>
@@ -53,7 +54,7 @@ function SearchScreen({ navigation }) {
                                 itemImage: item.image,
                                 itemName: item.name,
                                 itemPrice: item.price,
-                                
+                                itemRating: item.rating
                                 })}>
                             <Image style={styles.imagestyle}
                                 source={item.image}
@@ -63,7 +64,9 @@ function SearchScreen({ navigation }) {
                             <Text style={styles.Texthead}>
                                 {item.name}
                             </Text>
-                            <StarRating />
+                                <StarRating starCount=
+                                    {item.rating} 
+                                />
                             <Text style={styles.Price}>{item.price}</Text>
                             </View>
                         </View>
